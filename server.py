@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify
+from waitress import serve
 import ply.lex as lex
 import ply.yacc as yacc
 import sys
@@ -866,4 +867,4 @@ def execute():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    serve(app,host="127.0.0.1",port=8000)
